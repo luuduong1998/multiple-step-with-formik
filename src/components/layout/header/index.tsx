@@ -1,21 +1,15 @@
-import {
-  Grid,
-  IconButton,
-  Typography,
-  Link as MuiLink,
-  Button,
-} from "@mui/material";
+import { Grid, IconButton, Typography, Button } from "@mui/material";
 import CallIcon from "@mui/icons-material/Call";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import SellIcon from "@mui/icons-material/Sell";
-import React, { Fragment } from "react";
+import React from "react";
 import { menuHeader } from "../../../constants/menu";
 import LinkRouter from "../../link-router";
 import SearchIcon from "@mui/icons-material/Search";
 const Header = () => {
   return (
-    <Fragment>
+    <Grid position={"sticky"} top={0} bgcolor={"#fff"} zIndex={100}>
       <Grid container columns={15} bgcolor={"black"}>
         <Grid
           item
@@ -71,7 +65,7 @@ const Header = () => {
           </IconButton>
         </Grid>
       </Grid>
-    </Fragment>
+    </Grid>
   );
 };
 export default Header;

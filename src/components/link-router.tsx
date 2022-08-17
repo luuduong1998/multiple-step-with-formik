@@ -1,7 +1,7 @@
 import Link, { LinkProps } from "@mui/material/Link";
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { useGetActiveUrl } from "../hooks/useGetActiveUrl";
+import { useGetActiveUrl } from "../hooks/use-get-active-url";
 
 const LinkRouter = React.forwardRef<
   HTMLAnchorElement,

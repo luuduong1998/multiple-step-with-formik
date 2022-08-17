@@ -1,5 +1,3 @@
-import { ApiTwoTone } from "@mui/icons-material";
-
 export interface IMenuHeader {
   text: string;
   path: string;
@@ -11,8 +9,8 @@ export const apiPath = {
   about: "/about",
   contact: "/contact",
   service: "/service",
-  blog: "/blog",
-  showCase: "/show-case",
+  grid: "/grid",
+  muiTable: "/mui-table",
   product: {
     root: "/product",
     productNew: () => `${apiPath.product}/product-new`,
@@ -25,7 +23,7 @@ export const menuHeader: IMenuHeader[] = [
     path: apiPath.home,
   },
   {
-    text: "Checkout",
+    text: "Form",
     path: apiPath.checkout,
   },
   {
@@ -37,12 +35,12 @@ export const menuHeader: IMenuHeader[] = [
     path: apiPath.service,
   },
   {
-    text: "Showcase",
-    path: apiPath.showCase,
+    text: "mui-table",
+    path: apiPath.muiTable,
   },
   {
-    text: "Blog",
-    path: apiPath.blog,
+    text: "ag-grid",
+    path: apiPath.grid,
   },
   {
     text: "Contact",
