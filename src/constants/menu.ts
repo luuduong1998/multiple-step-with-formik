@@ -8,7 +8,7 @@ export const apiPath = {
   checkout: "/checkout",
   about: "/about",
   contact: "/contact",
-  service: "/service",
+  component: "/component",
   grid: "/grid",
   muiTable: "/mui-table",
   product: {
@@ -31,8 +31,8 @@ export const menuHeader: IMenuHeader[] = [
     path: apiPath.about,
   },
   {
-    text: "Service",
-    path: apiPath.service,
+    text: "Component",
+    path: apiPath.component,
   },
   {
     text: "mui-table",
