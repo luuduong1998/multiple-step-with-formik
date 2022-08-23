@@ -6,8 +6,10 @@ import Header from "../components/layout/header";
 import { apiPath } from "../constants/menu";
 import CheckoutPage from "../pages/checkout/checkout-page";
 import ErrorBoundaryPage from "../pages/error-boundary/error-boundary";
+import UploadFile from "../pages/file-upload/upload-file";
 import GridExample from "../pages/grid/grid-page";
 import HomePage from "../pages/home";
+import LoginPage from "../pages/login/login-page";
 import MainPage, { Test } from "../pages/mui-table";
 import { theme } from "../Theme/theme";
 
@@ -24,6 +26,8 @@ const App = () => {
             <Route path={apiPath.muiTable} element={<MainPage />} />
             <Route path={apiPath.contact} element={<Test />} />
             <Route path={apiPath.component} element={<ErrorBoundaryPage />} />
+            <Route path={apiPath.upload} element={<UploadFile />} />
+            <Route path={apiPath.login} element={<LoginPage />} />
           </Routes>
         </Container>
       </ThemeProvider>
