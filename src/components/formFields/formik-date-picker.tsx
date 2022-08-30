@@ -2,21 +2,21 @@ import {
   DatePickerProps,
   DesktopDatePicker,
   LocalizationProvider,
-} from "@mui/x-date-pickers";
-import React from "react";
-import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
-import { useField } from "formik";
-import { TextField, TextFieldProps } from "@mui/material";
+} from '@mui/x-date-pickers';
+import React from 'react';
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import { useField } from 'formik';
+import { TextField, TextFieldProps } from '@mui/material';
 
 type CustomizedDatePickerProps = {
   label: string;
   name: string;
-} & Omit<DatePickerProps<Date, Date>, "value" | "onChange" | "renderInput"> &
+} & Omit<DatePickerProps<Date, Date>, 'value' | 'onChange' | 'renderInput'> &
   TextFieldProps;
 
 const FormikDatePicker = (props: CustomizedDatePickerProps) => {
-  const { label, ...rest } = props;
-  const [field, , helper] = useField(props.name);
+  const { label, name, ...rest } = props;
+  const [field, , helper] = useField(name);
   const handleChange = (newValue: Date | null) => {
     helper.setValue(newValue);
   };
@@ -28,7 +28,7 @@ const FormikDatePicker = (props: CustomizedDatePickerProps) => {
         value={field.value}
         onChange={handleChange}
         disableMaskedInput={true}
-        renderInput={(params) => <TextField {...params} {...rest} />}
+        renderInput={params => <TextField {...params} {...rest} />}
       />
     </LocalizationProvider>
   );
