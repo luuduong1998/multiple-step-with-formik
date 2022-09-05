@@ -1,7 +1,5 @@
-import React, { useCallback } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { at } from 'lodash';
-import { useField } from 'formik';
+/* eslint-disable comma-dangle */
+/* eslint-disable import/no-extraneous-dependencies */
 import {
   Checkbox,
   CheckboxProps,
@@ -9,6 +7,9 @@ import {
   FormControlLabel,
   FormHelperText,
 } from '@mui/material';
+import { useField } from 'formik';
+import { at } from 'lodash';
+import { useCallback } from 'react';
 
 type CheckboxFieldProps = {
   label: string;
