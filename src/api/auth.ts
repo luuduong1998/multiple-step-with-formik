@@ -1,8 +1,8 @@
-import { InteractionRequiredAuthError } from "@azure/msal-browser";
-import { loginRequest } from "../config/auth";
-import { msalInstance } from "../routes";
+import { InteractionRequiredAuthError } from '@azure/msal-browser';
+import { loginRequest } from '../config/auth';
+import { msalInstance } from '../routes';
 
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
   window.erbs_msal_did_request_interaction_login = false;
 }
 
@@ -20,13 +20,13 @@ export const getTokenRedirect = async () => {
 
     if (!account) {
       throw Error(
-        "No active account! Verify a user has been signed in and setActiveAccount has been called."
+        'No active account! Verify a user has been signed in and setActiveAccount has been called.',
       );
     }
 
     response = await msalInstance.acquireTokenSilent({
       ...loginRequest,
-      account: account,
+      account,
     });
 
     return response;
@@ -49,10 +49,6 @@ export const getTokenRedirect = async () => {
   return null;
 };
 
-export const doLogout = () => {
-  return msalInstance.logoutRedirect();
-};
+export const doLogout = () => msalInstance.logoutRedirect();
 
-export const getAzureAdUser = () => {
-  return msalInstance.getActiveAccount();
-};
+export const getAzureAdUser = () => msalInstance.getActiveAccount();

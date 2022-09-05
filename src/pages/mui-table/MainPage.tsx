@@ -1,59 +1,57 @@
-import React from "react";
-import TableBase from "../../components/table";
+import React from 'react';
+import TableBase from '../../components/table';
 
-type Props = {};
-
-const MainPage = (props: Props) => {
+const MainPage = () => {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Name",
+        Header: 'Name',
         columns: [
           {
-            Header: "First Name",
-            accessor: "firstName",
+            Header: 'First Name',
+            accessor: 'firstName',
           },
           {
-            Header: "Last Name",
-            accessor: "lastName",
+            Header: 'Last Name',
+            accessor: 'lastName',
           },
         ],
       },
       {
-        Header: "Info",
+        Header: 'Info',
         columns: [
           {
-            Header: "Age",
-            accessor: "age",
+            Header: 'Age',
+            accessor: 'age',
           },
           {
-            Header: "Visits",
-            accessor: "visits",
+            Header: 'Visits',
+            accessor: 'visits',
           },
           {
-            Header: "Status",
-            accessor: "status",
+            Header: 'Status',
+            accessor: 'status',
           },
           {
-            Header: "Profile Progress",
-            accessor: "progress",
+            Header: 'Profile Progress',
+            accessor: 'progress',
           },
         ],
       },
     ],
-    []
+    [],
   );
   return (
     <TableBase
       columns={columns}
       data={[
         {
-          firstName: "firstName",
-          lastName: "lastName",
-          age: "age",
-          visits: "visits",
-          status: "status",
-          progress: "progress",
+          firstName: 'firstName',
+          lastName: 'lastName',
+          age: 'age',
+          visits: 'visits',
+          status: 'status',
+          progress: 'progress',
         },
       ]}
     />

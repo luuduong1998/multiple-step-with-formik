@@ -1,27 +1,30 @@
-import React, { useCallback } from "react";
-import { at } from "lodash";
-import { useField } from "formik";
+import React, { useCallback } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { at } from 'lodash';
+import { useField } from 'formik';
 import {
   Checkbox,
   CheckboxProps,
   FormControl,
   FormControlLabel,
   FormHelperText,
-} from "@mui/material";
+} from '@mui/material';
 
 type CheckboxFieldProps = {
   label: string;
   name: string;
 } & CheckboxProps;
 export default function CheckboxField(props: CheckboxFieldProps) {
-  const [field, meta, helper] = useField(props.name);
+  const { name, label, id } = props;
+  const [field, meta, helper] = useField(name);
   const { setValue } = helper;
 
-  function _renderHelperText() {
-    const [touched, error] = at(meta, "touched", "error");
+  function renderHelperText() {
+    const [touched, error] = at(meta, 'touched', 'error');
     if (touched && error) {
       return <FormHelperText>{error}</FormHelperText>;
     }
+    return null;
   }
 
   const handleChange = useCallback(() => {
@@ -35,14 +38,14 @@ export default function CheckboxField(props: CheckboxFieldProps) {
           <Checkbox
             {...props}
             {...field}
-            name={props.id}
+            name={id}
             checked={Boolean(field.value)}
             onChange={handleChange}
           />
         }
-        label={props.label}
+        label={label}
       />
-      {_renderHelperText()}
+      {renderHelperText()}
     </FormControl>
   );
 }

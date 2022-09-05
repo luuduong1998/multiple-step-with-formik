@@ -27,12 +27,16 @@
     "react/jsx-one-expression-per-line": "off",
     "react/function-component-definition": "off",
     "react/jsx-boolean-value": "off",
+    "react/require-default-props": "off",
     "react/jsx-filename-extension": [
       "warn",
       {
         "extensions": [".js", ".jsx", ".tsx", ".ts"]
       }
     ],
+    "react/button-has-type": "off",
+    "arrow-parens": "off",
+    "operator-linebreak": "off",
     "max-len": [
       "warn",
       {

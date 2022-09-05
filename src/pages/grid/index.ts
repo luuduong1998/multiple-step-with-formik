@@ -1,1 +1,1 @@
-export * from "./grid-page";
+export * from './grid-page';

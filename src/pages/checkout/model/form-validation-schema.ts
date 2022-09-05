@@ -1,5 +1,6 @@
-import checkoutFormModel from "./checkout-form-model";
-import * as Yup from "yup";
+import * as Yup from 'yup';
+import checkoutFormModel from './checkout-form-model';
+
 const {
   formField: {
     firstName,
@@ -25,7 +26,7 @@ export const validationSchema = [
     [city.name]: Yup.string().nullable().required(city.requiredErrorMsg),
     [zipcode.name]: Yup.string()
       .required(zipcode.requiredErrorMsg)
-      .test("len", zipcode.invalidErrorMsg, (val) => !!val && val.length === 5),
+      .test('len', zipcode.invalidErrorMsg, val => !!val && val.length === 5),
     [country.name]: Yup.string().nullable().required(country.requiredErrorMsg),
   }),
   Yup.object().shape({
@@ -36,6 +37,6 @@ export const validationSchema = [
     [expiryDate.name]: Yup.string().required(expiryDate.requiredErrorMsg),
     [cvv.name]: Yup.string()
       .required(cvv.requiredErrorMsg)
-      .test("len", cvv.invalidErrorMsg, (val) => !!val && val.length === 3),
+      .test('len', cvv.invalidErrorMsg, val => !!val && val.length === 3),
   }),
 ];
