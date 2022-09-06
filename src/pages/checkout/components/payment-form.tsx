@@ -1,13 +1,12 @@
-import { Grid, Typography } from "@mui/material";
-import React, { Fragment } from "react";
-import FormikDatePicker from "../../../components/formFields/formik-date-picker";
-import InputField from "../../../components/formFields/formik-input-field";
-import { formFieldProps } from "../type";
+import { Grid, Typography } from '@mui/material';
+import FormikDatePicker from '../../../components/formFields/formik-date-picker';
+import InputField from '../../../components/formFields/formik-input-field';
+import { formFieldProps } from '../type';
 
 const PaymentForm = (props: formFieldProps) => {
   const { nameOnCard, cardNumber, expiryDate, cvv } = props;
   return (
-    <Fragment>
+    <>
       <Typography variant="h6" gutterBottom>
         Payment method
       </Typography>
@@ -37,7 +36,7 @@ const PaymentForm = (props: formFieldProps) => {
           <InputField name={cvv.name} label={cvv.label} fullWidth />
         </Grid>
       </Grid>
-    </Fragment>
+    </>
   );
 };
 

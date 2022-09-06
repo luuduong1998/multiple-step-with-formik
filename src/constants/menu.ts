@@ -5,52 +5,52 @@ export interface IMenuHeader {
 }
 
 export const apiPath = {
-  home: "/",
-  checkout: "/checkout",
-  upload: "/upload",
-  contact: "/contact",
-  component: "/component",
-  grid: "/grid",
-  muiTable: "/mui-table",
-  login: "/login",
+  home: '/',
+  checkout: '/checkout',
+  upload: '/upload',
+  contact: '/contact',
+  component: '/component',
+  grid: '/grid',
+  muiTable: '/mui-table',
+  login: '/login',
   product: {
-    root: "/product",
+    root: '/product',
     productNew: () => `${apiPath.product}/product-new`,
   },
 };
 
 export const menuHeader: IMenuHeader[] = [
   {
-    text: "Home",
+    text: 'Home',
     path: apiPath.home,
-    des: "Home page",
+    des: 'Home page',
   },
   {
-    text: "Form",
+    text: 'Form',
     path: apiPath.checkout,
-    des: "multi step form",
+    des: 'multi step form',
   },
   {
-    text: "Upload",
+    text: 'Upload',
     path: apiPath.upload,
-    des: "Upload file with dropzone",
+    des: 'Upload file with dropzone',
   },
   {
-    text: "E-Boundary",
+    text: 'E-Boundary',
     path: apiPath.component,
-    des: "Error boundary ",
+    des: 'Error boundary ',
   },
   {
-    text: "mui-table",
+    text: 'mui-table',
     path: apiPath.muiTable,
   },
   {
-    text: "ag-grid",
+    text: 'ag-grid',
     path: apiPath.grid,
-    des: "Ag-grid library",
+    des: 'Ag-grid library',
   },
   {
-    text: "Contact",
+    text: 'Contact',
     path: apiPath.contact,
   },
 ];

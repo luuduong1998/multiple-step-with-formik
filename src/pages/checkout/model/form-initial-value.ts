@@ -1,4 +1,4 @@
-import checkoutFormModel from "./checkout-form-model";
+import checkoutFormModel from './checkout-form-model';
 
 const {
   formField: {
@@ -19,18 +19,18 @@ const {
 } = checkoutFormModel;
 
 const formInitialValue = {
-  [firstName.name]: "",
-  [lastName.name]: "",
-  [address1.name]: "",
-  [address2.name]: "",
-  [city.name]: "",
-  [state.name]: "",
-  [zipcode.name]: "",
-  [country.name]: "",
-  [nameOnCard.name]: "",
-  [cardNumber.name]: "",
+  [firstName.name]: '',
+  [lastName.name]: '',
+  [address1.name]: '',
+  [address2.name]: '',
+  [city.name]: '',
+  [state.name]: '',
+  [zipcode.name]: '',
+  [country.name]: '',
+  [nameOnCard.name]: '',
+  [cardNumber.name]: '',
   [expiryDate.name]: new Date().toDateString(),
-  [cvv.name]: "",
+  [cvv.name]: '',
 };
 
 export default formInitialValue;

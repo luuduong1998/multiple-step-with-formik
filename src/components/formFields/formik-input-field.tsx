@@ -1,28 +1,29 @@
-import React from "react";
-import { at } from "lodash";
-import { useField } from "formik";
-import { TextField, TextFieldProps } from "@mui/material";
+/* eslint-disable import/no-extraneous-dependencies */
+import { TextField, TextFieldProps } from '@mui/material';
+import { useField } from 'formik';
+import { at } from 'lodash';
 
 type InputFieldProps = {
   name: string;
 } & TextFieldProps;
 
 export default function InputField(props: InputFieldProps) {
-  const { ...rest } = props;
-  const [field, meta] = useField(props.name);
+  const { name, ...rest } = props;
+  const [field, meta] = useField(name);
 
-  function _renderHelperText() {
-    const [touched, error] = at(meta, "touched", "error");
+  function renderHelperText() {
+    const [touched, error] = at(meta, 'touched', 'error');
     if (touched && error) {
       return error;
     }
+    return null;
   }
 
   return (
     <TextField
       type="text"
       error={meta.touched && Boolean(meta.error)}
-      helperText={_renderHelperText()}
+      helperText={renderHelperText()}
       {...field}
       {...rest}
     />

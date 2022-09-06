@@ -3,9 +3,10 @@ import {
   TableCell,
   TableContainer,
   TableHead,
+  // eslint-disable-next-line comma-dangle
   TableRow,
-} from "@mui/material";
-import { useTable } from "react-table";
+} from '@mui/material';
+import { useTable } from 'react-table';
 
 const TableBase = ({ columns, data }: { columns: any; data: any }) => {
   const { getTableProps, headerGroups, rows, prepareRow } = useTable({
@@ -19,7 +20,7 @@ const TableBase = ({ columns, data }: { columns: any; data: any }) => {
           <TableRow {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column: any) => (
               <TableCell {...column.getHeaderProps()}>
-                {column.render("Header")}
+                {column.render('Header')}
               </TableCell>
             ))}
           </TableRow>
@@ -30,13 +31,11 @@ const TableBase = ({ columns, data }: { columns: any; data: any }) => {
           prepareRow(row);
           return (
             <TableRow {...row.getRowProps()}>
-              {row.cells.map((cell: any) => {
-                return (
-                  <TableCell {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </TableCell>
-                );
-              })}
+              {row.cells.map((cell: any) => (
+                <TableCell {...cell.getCellProps()}>
+                  {cell.render('Cell')}
+                </TableCell>
+              ))}
             </TableRow>
           );
         })}

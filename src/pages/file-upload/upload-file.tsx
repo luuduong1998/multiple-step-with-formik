@@ -1,12 +1,12 @@
 import { Formik } from 'formik';
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import FileUpload from './components/file-upload';
 
 export const listAcceptFiles = ['.csv', '.dbf', '.xls', '.xlsx', '.xlsm'];
 const UploadFile = () => {
   const onDrop = useCallback(async (acceptedFiles: any) => {
     const reader = new FileReader();
-    reader.onload = function () {
+    reader.onload = () => {
       const output: any = document.getElementById('output');
       output.src = reader.result;
     };

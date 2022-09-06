@@ -1,10 +1,9 @@
-import { Grid, Typography } from "@mui/material";
-import React, { Fragment } from "react";
-import SelectField from "../../../components/formFields/formik-dropdown-list";
-import CheckboxField from "../../../components/formFields/formik-input-checkbox";
-import InputField from "../../../components/formFields/formik-input-field";
-import { cities, countries, states } from "../../../constants/checkout-page";
-import { formFieldProps } from "../type";
+import { Grid, Typography } from '@mui/material';
+import SelectField from '../../../components/formFields/formik-dropdown-list';
+import CheckboxField from '../../../components/formFields/formik-input-checkbox';
+import InputField from '../../../components/formFields/formik-input-field';
+import { cities, countries, states } from '../../../constants/checkout-page';
+import { formFieldProps } from '../type';
 
 const AddressForm = (props: formFieldProps) => {
   const {
@@ -19,7 +18,7 @@ const AddressForm = (props: formFieldProps) => {
     useAddressForPaymentDetails,
   } = props;
   return (
-    <Fragment>
+    <>
       <Typography variant="h6" gutterBottom>
         Shipping address
       </Typography>
@@ -70,7 +69,7 @@ const AddressForm = (props: formFieldProps) => {
           />
         </Grid>
       </Grid>
-    </Fragment>
+    </>
   );
 };
 

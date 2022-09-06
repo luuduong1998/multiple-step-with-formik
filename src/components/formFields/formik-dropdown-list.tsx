@@ -1,15 +1,16 @@
-import React from "react";
-import { at } from "lodash";
-import { useField } from "formik";
+/* eslint-disable import/no-extraneous-dependencies */
 import {
   FormControl,
   FormControlProps,
   FormHelperText,
   InputLabel,
   MenuItem,
+  // eslint-disable-next-line comma-dangle
   Select,
-} from "@mui/material";
-import { theme } from "../../Theme/theme";
+} from '@mui/material';
+import { useField } from 'formik';
+import { at } from 'lodash';
+import { theme } from '../../Theme/theme';
 
 type SelectFieldProps<D> = {
   name: string;
@@ -21,15 +22,16 @@ type SelectFieldProps<D> = {
 } & FormControlProps;
 
 function SelectField<D>(props: SelectFieldProps<D>) {
-  const { label, data, ...rest } = props;
-  const [field, meta] = useField(props.name);
+  const { name, label, data, ...rest } = props;
+  const [field, meta] = useField(name);
   const { value: selectedValue } = field;
-  const [touched, error] = at(meta, "touched", "error");
+  const [touched, error] = at(meta, 'touched', 'error');
   const isError = touched && error && true;
-  const _renderHelperText = () => {
+  const renderHelperText = () => {
     if (isError) {
       return <FormHelperText>{error}</FormHelperText>;
     }
+    return null;
   };
 
   return (
@@ -37,14 +39,14 @@ function SelectField<D>(props: SelectFieldProps<D>) {
       <InputLabel sx={{ bgcolor: theme.palette.secondary.main }}>
         {label}
       </InputLabel>
-      <Select {...field} value={selectedValue ? selectedValue : ""}>
+      <Select {...field} value={selectedValue || ''}>
         {data.map((item, index) => (
           <MenuItem key={index} value={item.value as unknown as string}>
             {item.label}
           </MenuItem>
         ))}
       </Select>
-      {_renderHelperText()}
+      {renderHelperText()}
     </FormControl>
   );
 }
