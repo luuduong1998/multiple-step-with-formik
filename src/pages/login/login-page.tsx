@@ -1,6 +1,5 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
-import { Form, Formik } from 'formik';
-import React from 'react';
+import { Form, Formik, FormikValues } from 'formik';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import InputField from '../../components/formFields/formik-input-field';
@@ -16,6 +15,10 @@ const SignupSchema = Yup.object().shape({
     .required('password is required!'),
 });
 
+const onSubmitHandler = (formValues: FormikValues) => {
+  console.log(formValues);
+};
+
 const LoginPage = () => (
   <Box mt={2}>
     <Formik
@@ -23,7 +26,7 @@ const LoginPage = () => (
         username: '',
         password: '',
       }}
-      onSubmit={formValues => console.log(formValues)}
+      onSubmit={onSubmitHandler}
       validationSchema={SignupSchema}
     >
       <Form id="login">
