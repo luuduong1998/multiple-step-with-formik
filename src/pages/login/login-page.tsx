@@ -17,6 +17,7 @@ const SignupSchema = Yup.object().shape({
 
 const onSubmitHandler = (formValues: FormikValues) => {
   console.log(formValues);
+  console.log('test');
 };
 
 const LoginPage = () => (
