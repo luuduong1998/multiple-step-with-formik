@@ -4,7 +4,7 @@ import {
   TableContainer,
   TableHead,
   // eslint-disable-next-line comma-dangle
-  TableRow,
+  TableRow
 } from '@mui/material';
 import { useTable } from 'react-table';
 

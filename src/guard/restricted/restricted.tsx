@@ -15,6 +15,7 @@ const useIsPermitted = (to: string) => {
     '/upload',
     '/component',
     '/mui-table',
+    '/checkout',
   ];
   const isPermitted = listPageUserCanAccess.includes(to);
   return { isPermitted };

@@ -17,6 +17,9 @@ export const apiPath = {
     root: '/product',
     productNew: () => `${apiPath.product}/product-new`,
   },
+  ahook: {
+    root: '/ahook',
+  },
 };
 
 export const menuHeader: IMenuHeader[] = [
@@ -52,5 +55,9 @@ export const menuHeader: IMenuHeader[] = [
   {
     text: 'Contact',
     path: apiPath.contact,
+  },
+  {
+    text: 'ahook',
+    path: apiPath.ahook.root,
   },
 ];

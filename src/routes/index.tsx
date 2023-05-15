@@ -9,6 +9,7 @@ import { initMsal } from '../config/auth';
 import { apiPath } from '../constants/menu';
 import NotPermittedPage from '../guard/restricted/not-permitted-page';
 import Restricted from '../guard/restricted/restricted';
+import { UseRequestPage } from '../pages/ahook';
 import CheckoutPage from '../pages/checkout/checkout-page';
 import ErrorBoundaryPage from '../pages/error-boundary/error-boundary';
 import UploadFile from '../pages/file-upload/upload-file';
@@ -39,11 +40,15 @@ const App = () => (
                 </Restricted>
               }
             />
-            <Route path={apiPath.grid} element={<GridExample />} />
+            <Route path={`${apiPath.grid}`}>
+              <Route index element={<GridExample />} />
+              <Route path="view" element={<div>profile</div>} />
+            </Route>
             <Route path={apiPath.muiTable} element={<MainPage />} />
             <Route path={apiPath.contact} element={<Test />} />
             <Route path={apiPath.component} element={<ErrorBoundaryPage />} />
             <Route path={apiPath.upload} element={<UploadFile />} />
+            <Route path={apiPath.ahook.root} element={<UseRequestPage />} />
             <Route path={apiPath.login} element={<LoginPage />} />
           </Routes>
         </Container>
